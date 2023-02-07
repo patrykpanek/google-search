@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import Header from 'components/Header';
-
-const inter = Inter({ subsets: ['latin'] });
+import Search from 'components/Search';
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
       {/* Header */}
       <Header />
       {/* Body */}
-
+      <Search />
       {/* Footer */}
     </>
   );
