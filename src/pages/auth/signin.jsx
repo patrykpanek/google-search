@@ -3,6 +3,7 @@ import { getProviders, signIn } from 'next-auth/react';
 import React from 'react';
 
 export default function sign({ providers }) {
+  console.log(providers);
   return (
     <div>
       <Header />
