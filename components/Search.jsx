@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { MagnifyingGlassIcon, MicrophoneIcon } from '@heroicons/react/24/solid';
+import nextConfig from 'next.config';
 
 export default function Search() {
   return (
@@ -14,7 +15,7 @@ export default function Search() {
           width="300"
           height="100"
         />
-        <div className="flex w-full mx-auto justify-center border max-w-[80%]  focus-within:shadow-lg hover:shadow-lg px-5 py-3 rounded-full items-center">
+        <div className="flex w-full mx-auto justify-center border max-w-[80%]  focus-within:shadow-lg hover:shadow-lg px-5 py-3 rounded-full items-center mt-4">
           <MagnifyingGlassIcon className="h-5 text-gray-500" />
           <input type="text" className="flex-1 focus:outline-none px-3" />
           <MicrophoneIcon className="h-5 text-gray-500 hover:text-[black] hover:cursor-pointer" />
