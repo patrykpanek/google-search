@@ -11,7 +11,9 @@ export default function User({ className }) {
       <>
         <img
           onClick={signOut}
-          src={session.user.image}
+          src={
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Man_silhouette.svg/1200px-Man_silhouette.svg.png'
+          }
           alt="user-image"
           width={50}
           height={50}
