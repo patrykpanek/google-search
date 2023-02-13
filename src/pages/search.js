@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 export default function search({ results }) {
   const router = useRouter();
-  console.log(results);
+
   return (
     <div>
       <Head>
