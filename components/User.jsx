@@ -1,8 +1,11 @@
 import React from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
+import nextConfig from 'next.config';
+
 export default function User({ className }) {
   const { data: session } = useSession();
+
   if (session) {
     return (
       <>
@@ -10,6 +13,8 @@ export default function User({ className }) {
           onClick={signOut}
           src={session.user.image}
           alt="user-image"
+          width={50}
+          height={50}
           className={`h-10 w-10 rounded-full bg-gray-200 cursor-pointer ${className}`}
         />
       </>

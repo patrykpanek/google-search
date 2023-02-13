@@ -7,6 +7,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/solid';
 import User from './User';
+import SearchHeaderOptions from './SearchHeaderOptions';
 
 export default function SearchHeader() {
   const router = useRouter();
@@ -15,20 +16,20 @@ export default function SearchHeader() {
     e.preventDefault();
     const term = searchInputRef.current.value;
     if (!term.trim()) return;
-    router.push(`/search?term=${term.trim()}`);
+    router.push(`/search?term=${term.trim()}&searchType=`);
   };
   return (
     <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 items-center">
         <Image
           onClick={() => router.push('/')}
-          objectFit="cover"
           src={
             'https://cdn2.downdetector.com/static/uploads/logo/Google-new_19.png'
           }
           width="120"
           height="40"
-          className="cursor-pointer"
+          className="cursor-pointer object-cover"
+          alt="user"
         />
         <form className="flex border border-gray-200 rounded-full shadow-lg px-6 py-3 ml-10 mr-5 flex-grow max-w-3xl items-center">
           <input
@@ -47,6 +48,7 @@ export default function SearchHeader() {
         </form>
         <User className="ml-auto whitespace-nowrap" />
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 }

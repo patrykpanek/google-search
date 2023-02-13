@@ -12,18 +12,18 @@ export default function Search() {
     e.preventDefault();
     const term = searchInputRef.current.value;
     if (!term.trim()) return;
-    router.push(`/search?term=${term.trim()}`);
+    router.push(`/search?term=${term.trim()}&searchType=`);
   };
   return (
     <>
       <form className="flex flex-col items-center mt-40 ">
         <Image
-          objectFit="cover"
           src={
             'https://cdn2.downdetector.com/static/uploads/logo/Google-new_19.png'
           }
           width="300"
           height="100"
+          alt="google"
         />
         <div className="flex w-full mx-auto justify-center border max-w-[80%]  focus-within:shadow-lg hover:shadow-lg px-5 py-3 rounded-full items-center mt-4">
           <MagnifyingGlassIcon className="h-5 text-gray-500" />
@@ -38,7 +38,7 @@ export default function Search() {
           <button onClick={search} className="btn">
             Google Search
           </button>
-          <button className="btn">I'm feeling lucky</button>
+          <button className="btn">Im feeling lucky</button>
         </div>
       </form>
     </>
