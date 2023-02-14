@@ -21,7 +21,7 @@ export default function Header() {
         </Link>
         <Link
           className="link"
-          href={`http://localhost:3000/search?term=${
+          href={`/search?term=${
             router.query.term || 'google'
           }&searchType=image`}
         >
