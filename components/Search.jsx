@@ -14,6 +14,16 @@ export default function Search() {
     if (!term.trim()) return;
     router.push(`/search?term=${term.trim()}&searchType=`);
   };
+  const randomSearch = async (e) => {
+    e.preventDefault();
+    const randomWord = Math.floor(Math.random() * 3);
+    const randomTerm = await fetch(
+      ' https://random-word-api.herokuapp.com/word?number=10'
+    ).then((res) => res.json());
+    if (!randomTerm) return;
+    router.push(`/search?term=${randomTerm[randomWord]}&searchType=`);
+  };
+
   return (
     <>
       <form className="flex flex-col items-center mt-40 ">
@@ -38,7 +48,9 @@ export default function Search() {
           <button onClick={search} className="btn">
             Google Search
           </button>
-          <button className="btn">Im feeling lucky</button>
+          <button onClick={randomSearch} className="btn">
+            I&apos;m feeling lucky
+          </button>
         </div>
       </form>
     </>

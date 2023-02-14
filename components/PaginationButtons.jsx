@@ -8,9 +8,7 @@ export default function PaginationButtons() {
   const startIndex = Number(router.query.start) || 1;
   return (
     <div
-      className={`text-blue-700 flex ${
-        startIndex < 10 ? 'justify-end' : 'justify-between'
-      } space-x-7 ml-auto xl:pr-80 mb-6 sm:pr-36 `}
+      className={`text-blue-700 flex justify-center md:justify-start space-x-7 ml-auto xl:pr-80 mb-6 sm:pr-36 `}
     >
       {startIndex > 10 && (
         <Link
