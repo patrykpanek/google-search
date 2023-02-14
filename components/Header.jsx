@@ -20,7 +20,7 @@ export default function Header() {
           <p className="link">Gmail</p>
         </Link>
         <Link
-          className="cursor-pointer link"
+          className="link"
           href={`http://localhost:3000/search?term=${
             router.query.term || 'google'
           }&searchType=image`}
